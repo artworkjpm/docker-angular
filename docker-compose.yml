@@ -1,0 +1,17 @@
+version: "3"
+services:
+  api:
+    image: wefoxgroup/wg-web-challenge:latest
+    container_name: api
+    ports:
+      - 3000:3000
+  angular-ui:
+    build:
+      context: ./
+      dockerfile: Dockerfile-dev
+    ports:
+      - 4201:4201
+    container_name: angular-ui
+    volumes:
+      - ./:/usr/src/app
+      - /usr/src/app/node_modules
