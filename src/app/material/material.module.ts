@@ -4,7 +4,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTableModule } from '@angular/material/table';
 import { MatInputModule } from '@angular/material/input';
-
+import { MatMenuModule } from '@angular/material/menu';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatChipsModule } from '@angular/material/chips';
@@ -15,6 +15,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 const MaterialComponents = [
   MatToolbarModule,
+  MatMenuModule,
   MatButtonModule,
   MatTableModule,
   MatFormFieldModule,

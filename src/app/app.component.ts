@@ -3,6 +3,8 @@ import { TopNavComponent } from './components/top-nav/top-nav.component';
 import { ApiService } from './services/api.service';
 import { Router } from '@angular/router';
 import { Post } from './models';
+import { MatDialog } from '@angular/material/dialog';
+import { DialogMapComponent } from './components/dialog-map/dialog-map.component';
 
 @Component({
   selector: 'app-root',
@@ -12,12 +14,21 @@ import { Post } from './models';
 })
 export class AppComponent implements OnInit {
   title = 'docker-angular';
-  posts = [Post];
+  posts: Post[] = [];
+  displayedColumns: string[] = ['name', 'content', 'map'];
 
-  constructor(public apiService: ApiService, private router: Router) {}
+  constructor(
+    public apiService: ApiService,
+    public dialog: MatDialog,
+    private router: Router
+  ) {}
   ngOnInit() {
     this.apiService.getPosts().subscribe((items) => {
       console.log(items);
+      this.posts = items;
     });
+  }
+  openMap(lat: any, long: any) {
+    this.dialog.open(DialogMapComponent);
   }
 }
