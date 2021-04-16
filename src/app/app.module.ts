@@ -7,9 +7,10 @@ import { TopNavComponent } from './components/top-nav/top-nav.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
 import { DialogMapComponent } from './components/dialog-map/dialog-map.component';
+import { GooglemapsComponent } from './components/googlemaps/googlemaps.component';
 
 @NgModule({
-  declarations: [AppComponent, TopNavComponent, DialogMapComponent],
+  declarations: [AppComponent, TopNavComponent, DialogMapComponent, GooglemapsComponent],
   entryComponents: [DialogMapComponent],
   imports: [
     BrowserModule,

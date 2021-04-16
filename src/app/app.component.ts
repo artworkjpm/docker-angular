@@ -5,12 +5,13 @@ import { Router } from '@angular/router';
 import { Post } from './models';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogMapComponent } from './components/dialog-map/dialog-map.component';
+import { GooglemapsComponent } from './components/googlemaps/googlemaps.component';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  providers: [TopNavComponent],
+  providers: [TopNavComponent, GooglemapsComponent],
 })
 export class AppComponent implements OnInit {
   title = 'docker-angular';
@@ -29,6 +30,8 @@ export class AppComponent implements OnInit {
     });
   }
   openMap(lat: any, long: any) {
-    this.dialog.open(DialogMapComponent);
+    this.dialog.open(DialogMapComponent, {
+      data: { lat, long },
+    });
   }
 }
