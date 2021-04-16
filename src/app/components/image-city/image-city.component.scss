@@ -1,0 +1,21 @@
+img {
+  cursor: pointer;
+}
+
+.over-text {
+  position: absolute;
+  font-size: 1.5rem;
+  background: rgba(255, 255, 255, 0.5);
+  padding: 10px;
+  width: 90%;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.icon {
+  position: absolute;
+  bottom: 10px;
+  left: 30px;
+  color: #fff;
+  cursor: pointer;
+}

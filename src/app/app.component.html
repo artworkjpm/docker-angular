@@ -5,12 +5,32 @@
     <table mat-table [dataSource]="posts" class="mat-elevation-z8">
       <ng-container matColumnDef="name">
         <th mat-header-cell *matHeaderCellDef>Name</th>
-        <td mat-cell *matCellDef="let item">{{ item.title }}</td>
+        <td
+          mat-cell
+          *matCellDef="let item"
+          class="header"
+          style="position: relative"
+        >
+          <!--   <div class="over-text">
+            {{ item.title }}
+          </div> -->
+          <app-image-city
+            [title]="item.title"
+            [urlpath]="item.image_url"
+          ></app-image-city>
+        </td>
       </ng-container>
 
       <ng-container matColumnDef="content">
         <th mat-header-cell *matHeaderCellDef>Content</th>
-        <td mat-cell *matCellDef="let item">{{ item.content }}</td>
+        <td
+          mat-cell
+          *matCellDef="let item"
+          class="body"
+          style="position: relative"
+        >
+          <div style="z-index: 1000">{{ item.content }}</div>
+        </td>
       </ng-container>
 
       <ng-container matColumnDef="map">

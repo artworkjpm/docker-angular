@@ -1,0 +1,8 @@
+<div (click)="changeImageSize()">
+  <div class="over-text">
+    {{ title }}
+  </div>
+  <img [src]="urlpath" [ngStyle]="{ width: imageWidth }" />
+
+  <mat-icon class="icon">fullscreen</mat-icon>
+</div>

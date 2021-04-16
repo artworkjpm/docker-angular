@@ -8,9 +8,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
 import { DialogMapComponent } from './components/dialog-map/dialog-map.component';
 import { GooglemapsComponent } from './components/googlemaps/googlemaps.component';
+import { ImageCityComponent } from './components/image-city/image-city.component';
 
 @NgModule({
-  declarations: [AppComponent, TopNavComponent, DialogMapComponent, GooglemapsComponent],
+  declarations: [AppComponent, TopNavComponent, DialogMapComponent, GooglemapsComponent, ImageCityComponent],
   entryComponents: [DialogMapComponent],
   imports: [
     BrowserModule,
