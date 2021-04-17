@@ -9,9 +9,10 @@ import { MaterialModule } from './material/material.module';
 import { DialogMapComponent } from './components/dialog-map/dialog-map.component';
 import { GooglemapsComponent } from './components/googlemaps/googlemaps.component';
 import { ImageCityComponent } from './components/image-city/image-city.component';
+import { DialogEditComponent } from './components/dialog-edit/dialog-edit.component';
 
 @NgModule({
-  declarations: [AppComponent, TopNavComponent, DialogMapComponent, GooglemapsComponent, ImageCityComponent],
+  declarations: [AppComponent, TopNavComponent, DialogMapComponent, GooglemapsComponent, ImageCityComponent, DialogEditComponent],
   entryComponents: [DialogMapComponent],
   imports: [
     BrowserModule,
