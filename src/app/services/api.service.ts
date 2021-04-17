@@ -14,8 +14,13 @@ export class ApiService {
     this.postsArray = [];
   }
 
-  //Observable to replicate an api call, however its just a json file
   getPosts(): Observable<Post[]> {
     return this.http.get<Post[]>(this.API);
+  }
+  updatePosts(newPost: Post): Observable<Post[]> {
+    return this.http.put<Post[]>(
+      'http://localhost:3000/api/v1/posts/3',
+      newPost
+    );
   }
 }
