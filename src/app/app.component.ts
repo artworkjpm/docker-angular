@@ -58,8 +58,7 @@ export class AppComponent implements OnInit {
   editPost(editedPost: Post) {
     this.dialog.open(DialogEditComponent, {
       data: editedPost,
-      minWidth: '100%',
-      minHeight: '50%',
+      minWidth: '50%',
     });
   }
 }

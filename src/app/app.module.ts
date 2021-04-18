@@ -10,9 +10,17 @@ import { DialogMapComponent } from './components/dialog-map/dialog-map.component
 import { GooglemapsComponent } from './components/googlemaps/googlemaps.component';
 import { ImageCityComponent } from './components/image-city/image-city.component';
 import { DialogEditComponent } from './components/dialog-edit/dialog-edit.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [AppComponent, TopNavComponent, DialogMapComponent, GooglemapsComponent, ImageCityComponent, DialogEditComponent],
+  declarations: [
+    AppComponent,
+    TopNavComponent,
+    DialogMapComponent,
+    GooglemapsComponent,
+    ImageCityComponent,
+    DialogEditComponent,
+  ],
   entryComponents: [DialogMapComponent],
   imports: [
     BrowserModule,
@@ -20,6 +28,8 @@ import { DialogEditComponent } from './components/dialog-edit/dialog-edit.compon
     MaterialModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
