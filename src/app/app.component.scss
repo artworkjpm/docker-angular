@@ -10,9 +10,20 @@ table {
   width: 200px;
   height: 100px;
 }
-.header {
-  padding-right: 60px;
+
+.city-header {
+  width: 100px;
+}
+.city-name {
+  width: 100px;
+  position: relative;
 }
 .body {
-  padding: 20px 20px 20px 0;
+  position: relative;
+  padding: 20px;
+  width: 300px;
+}
+
+.content-header {
+  padding-left: 20px;
 }
