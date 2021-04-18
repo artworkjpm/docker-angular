@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Post } from '../models';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Subscription } from 'rxjs';
+import { take } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root',
@@ -14,13 +15,22 @@ export class ApiService {
     this.postsArray = [];
   }
 
-  getPosts(): Observable<Post[]> {
-    return this.http.get<Post[]>(this.API);
+  getPosts(): Subscription {
+    return this.http
+      .get<Post[]>(this.API)
+      .pipe(take(1))
+      .subscribe((items) => {
+        console.log(items);
+        this.postsArray = items;
+      });
   }
-  updatePosts(newPost: Post): Observable<Post[]> {
-    return this.http.put<Post[]>(
-      'http://localhost:3000/api/v1/posts/3',
-      newPost
-    );
+  updatePosts(idToChange: number, newPost: Post): Subscription {
+    console.log(idToChange, newPost);
+    return this.http
+      .put<Post[]>(`${this.API}/${idToChange}`, newPost)
+      .pipe(take(1))
+      .subscribe(() => {
+        this.getPosts();
+      });
   }
 }

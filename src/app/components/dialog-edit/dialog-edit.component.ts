@@ -1,12 +1,8 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import {
-  FormBuilder,
-  FormGroup,
-  FormControl,
-  Validators,
-} from '@angular/forms';
-import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { FormBuilder, Validators } from '@angular/forms';
+import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Post } from 'src/app/models';
+import { ApiService } from 'src/app/services/api.service';
 @Component({
   selector: 'app-dialog-edit',
   templateUrl: './dialog-edit.component.html',
@@ -26,7 +22,9 @@ export class DialogEditComponent implements OnInit {
   post: any;
   constructor(
     private fb: FormBuilder,
-    @Inject(MAT_DIALOG_DATA) public data: Post
+    @Inject(MAT_DIALOG_DATA) public data: Post,
+    public apiService: ApiService,
+    public dialog: MatDialog
   ) {}
 
   ngOnInit(): void {
@@ -46,5 +44,7 @@ export class DialogEditComponent implements OnInit {
 
   onSubmit(post: any) {
     console.log(post);
+    this.apiService.updatePosts(post.id, post);
+    this.dialog.closeAll();
   }
 }

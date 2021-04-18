@@ -26,12 +26,9 @@ export class AppComponent implements OnInit {
     private router: Router
   ) {}
   ngOnInit() {
-    this.apiService.getPosts().subscribe((items) => {
-      console.log(items);
-      this.posts = items;
-    });
+    this.apiService.getPosts();
 
-    let newPost = {
+    /*  let newPost = {
       content:
         'Berlin is the capital and the largest city of Germany as well as one of its 16 constituent states. With a population of approximately 3.7 million, Berlin is the second...',
       created_at: '2020-04-24T11:43:34.069Z',
@@ -42,11 +39,11 @@ export class AppComponent implements OnInit {
       long: '13.1445548',
       title: 'Berlin',
       updated_at: '2020-04-24T11:43:34.069Z',
-    };
+    }; */
 
-    this.apiService.updatePosts(newPost).subscribe(() => {
+    /*  this.apiService.updatePosts(newPost).subscribe(() => {
       this.apiService.getPosts();
-    });
+    }); */
   }
   openMap(lat: any, long: any) {
     this.dialog.open(DialogMapComponent, {

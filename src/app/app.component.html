@@ -2,7 +2,11 @@
   <app-top-nav></app-top-nav>
   <div class="container">
     <h1>Top European Cities</h1>
-    <table mat-table [dataSource]="posts" class="mat-elevation-z8">
+    <table
+      mat-table
+      [dataSource]="apiService.postsArray"
+      class="mat-elevation-z8"
+    >
       <ng-container matColumnDef="name">
         <th mat-header-cell *matHeaderCellDef>Name</th>
         <td
