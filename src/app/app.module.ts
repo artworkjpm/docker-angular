@@ -7,21 +7,25 @@ import { TopNavComponent } from './components/top-nav/top-nav.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
 import { DialogMapComponent } from './components/dialog-map/dialog-map.component';
-import { GooglemapsComponent } from './components/googlemaps/googlemaps.component';
 import { ImageCityComponent } from './components/image-city/image-city.component';
 import { DialogEditComponent } from './components/dialog-edit/dialog-edit.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DialogCreateComponent } from './components/dialog-create/dialog-create.component';
+import { AboutAppComponent } from './components/about-app/about-app.component';
+import { AboutMeComponent } from './components/about-me/about-me.component';
+import { DataTableComponent } from './components/data-table/data-table.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TopNavComponent,
     DialogMapComponent,
-    GooglemapsComponent,
     ImageCityComponent,
     DialogEditComponent,
     DialogCreateComponent,
+    AboutAppComponent,
+    AboutMeComponent,
+    DataTableComponent,
   ],
   entryComponents: [DialogMapComponent],
   imports: [
