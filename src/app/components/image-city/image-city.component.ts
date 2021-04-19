@@ -6,8 +6,10 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./image-city.component.scss'],
 })
 export class ImageCityComponent implements OnInit {
-  @Input() title: any;
-  @Input() urlpath: any;
+  @Input()
+  title!: string;
+  @Input()
+  urlpath!: string;
   imageWidth: string = '150px';
   imageSmall: boolean = false;
 

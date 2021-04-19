@@ -12,9 +12,6 @@ export class GooglemapsComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
-    console.log(this.data);
-    console.log(parseFloat(this.data.lat), parseFloat(this.data.long));
-
     let loader = new Loader({
       apiKey: googlemapsapi,
     });

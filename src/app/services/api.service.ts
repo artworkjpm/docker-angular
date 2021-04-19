@@ -20,12 +20,10 @@ export class ApiService {
       .get<Post[]>(this.API)
       .pipe(take(1))
       .subscribe((items) => {
-        console.log(items);
         this.postsArray = items;
       });
   }
   updatePosts(idToChange: number, edittedPost: Post): Subscription {
-    console.log(idToChange, edittedPost);
     return this.http
       .put<Post[]>(`${this.API}/${idToChange}`, edittedPost)
       .pipe(take(1))
@@ -34,9 +32,17 @@ export class ApiService {
       });
   }
   createNewPost(newPost: Post): Subscription {
-    console.log(newPost);
     return this.http
       .post<Post[]>(`${this.API}`, newPost)
+      .pipe(take(1))
+      .subscribe(() => {
+        this.getPosts();
+      });
+  }
+
+  removePost(idToRemove: number): Subscription {
+    return this.http
+      .delete<Post[]>(`${this.API}/${idToRemove}`)
       .pipe(take(1))
       .subscribe(() => {
         this.getPosts();

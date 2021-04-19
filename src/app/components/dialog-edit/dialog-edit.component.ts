@@ -19,7 +19,6 @@ export class DialogEditComponent implements OnInit {
     created_at: ['', Validators.required],
     updated_at: ['', Validators.required],
   });
-  post: any;
   constructor(
     private fb: FormBuilder,
     @Inject(MAT_DIALOG_DATA) public data: Post,
@@ -28,7 +27,7 @@ export class DialogEditComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    //I want the inputs to be prefilled for editting, I use setValue for that
+    //I want the inputs to be prefilled for editing, I use setValue for that
     this.data &&
       this.formGroup.setValue({
         id: this.data.id,
@@ -43,7 +42,6 @@ export class DialogEditComponent implements OnInit {
   }
 
   onSubmit(post: Post) {
-    console.log(post);
     this.apiService.updatePosts(post.id, post);
     this.dialog.closeAll();
   }
