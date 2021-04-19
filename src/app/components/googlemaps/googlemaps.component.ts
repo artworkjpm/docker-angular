@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Loader } from '@googlemaps/js-api-loader';
+import { googlemapsapi } from 'apikeys';
 
 @Component({
   selector: 'app-googlemaps',
@@ -15,7 +16,7 @@ export class GooglemapsComponent implements OnInit {
     console.log(parseFloat(this.data.lat), parseFloat(this.data.long));
 
     let loader = new Loader({
-      apiKey: 'AIzaSyBh0mTqFD09A-jKgnpOw5_6mpL8qvGiOMA',
+      apiKey: googlemapsapi,
     });
 
     loader.load().then(() => {
