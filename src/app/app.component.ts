@@ -8,6 +8,7 @@ import { DialogMapComponent } from './components/dialog-map/dialog-map.component
 import { GooglemapsComponent } from './components/googlemaps/googlemaps.component';
 import { ImageCityComponent } from './components/image-city/image-city.component';
 import { DialogEditComponent } from './components/dialog-edit/dialog-edit.component';
+import { DialogCreateComponent } from './components/dialog-create/dialog-create.component';
 
 @Component({
   selector: 'app-root',
@@ -18,14 +19,7 @@ import { DialogEditComponent } from './components/dialog-edit/dialog-edit.compon
 export class AppComponent implements OnInit {
   title = 'docker-angular';
   posts: Post[] = [];
-  displayedColumns: string[] = [
-    'name',
-    'content',
-    'map',
-    'edit',
-    'create',
-    'remove',
-  ];
+  displayedColumns: string[] = ['name', 'content', 'map', 'edit', 'remove'];
 
   constructor(
     public apiService: ApiService,
@@ -45,6 +39,12 @@ export class AppComponent implements OnInit {
   editPost(editedPost: Post) {
     this.dialog.open(DialogEditComponent, {
       data: editedPost,
+      minWidth: '50%',
+    });
+  }
+
+  createPost() {
+    this.dialog.open(DialogCreateComponent, {
       minWidth: '50%',
     });
   }

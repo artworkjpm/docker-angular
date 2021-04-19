@@ -11,6 +11,7 @@ import { GooglemapsComponent } from './components/googlemaps/googlemaps.componen
 import { ImageCityComponent } from './components/image-city/image-city.component';
 import { DialogEditComponent } from './components/dialog-edit/dialog-edit.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DialogCreateComponent } from './components/dialog-create/dialog-create.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     GooglemapsComponent,
     ImageCityComponent,
     DialogEditComponent,
+    DialogCreateComponent,
   ],
   entryComponents: [DialogMapComponent],
   imports: [
@@ -31,6 +33,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FormsModule,
     ReactiveFormsModule,
   ],
+  exports: [MaterialModule],
   providers: [],
   bootstrap: [AppComponent],
 })

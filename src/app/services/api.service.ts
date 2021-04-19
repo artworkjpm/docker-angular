@@ -24,10 +24,19 @@ export class ApiService {
         this.postsArray = items;
       });
   }
-  updatePosts(idToChange: number, newPost: Post): Subscription {
-    console.log(idToChange, newPost);
+  updatePosts(idToChange: number, edittedPost: Post): Subscription {
+    console.log(idToChange, edittedPost);
     return this.http
-      .put<Post[]>(`${this.API}/${idToChange}`, newPost)
+      .put<Post[]>(`${this.API}/${idToChange}`, edittedPost)
+      .pipe(take(1))
+      .subscribe(() => {
+        this.getPosts();
+      });
+  }
+  createNewPost(newPost: Post): Subscription {
+    console.log(newPost);
+    return this.http
+      .post<Post[]>(`${this.API}`, newPost)
       .pipe(take(1))
       .subscribe(() => {
         this.getPosts();

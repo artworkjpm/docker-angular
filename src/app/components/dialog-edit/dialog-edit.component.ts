@@ -28,7 +28,7 @@ export class DialogEditComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    console.log(this.data);
+    //I want the inputs to be prefilled for editting, I use setValue for that
     this.data &&
       this.formGroup.setValue({
         id: this.data.id,
@@ -42,7 +42,7 @@ export class DialogEditComponent implements OnInit {
       });
   }
 
-  onSubmit(post: any) {
+  onSubmit(post: Post) {
     console.log(post);
     this.apiService.updatePosts(post.id, post);
     this.dialog.closeAll();
