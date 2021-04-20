@@ -17,6 +17,10 @@ export class DialogMapComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.loader = new Loader({
+      apiKey: googleMapsApi,
+    });
+
     this.loader.load().then(() => {
       new google.maps.Map(document.getElementById('map') as HTMLElement, {
         center: {
