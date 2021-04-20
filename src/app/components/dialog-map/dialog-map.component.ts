@@ -2,6 +2,7 @@ import { Component, OnInit, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Loader } from '@googlemaps/js-api-loader';
 import { googleMapsApi } from 'apikeys';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-dialog-map',
@@ -10,7 +11,7 @@ import { googleMapsApi } from 'apikeys';
 })
 export class DialogMapComponent implements OnInit {
   loader = new Loader({
-    apiKey: googleMapsApi,
+    apiKey: environment.googleMapsApi,
   });
   constructor(
     @Inject(MAT_DIALOG_DATA) public data: { lat: string; long: string }
