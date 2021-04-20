@@ -1,1 +1,37 @@
-<div class="container">about this test</div>
+<div class="container">
+  <h1>About this app</h1>
+
+  <p>
+    First of all I want to say it was fun to build, especially setting up Docker
+    and calling the api you made
+  </p>
+
+  <ul>
+    <li>
+      I used docker-compose.yml to lauch the docker api you made and I put this
+      Angular app as a docker container. But you can just run this Angular app
+      using ng-serve, but you will need to run the api server locally to get
+      data back in the calls.d
+    </li>
+    <li>
+      I used Angular Material Components because I like them and they're easy to
+      use
+    </li>
+    <li>I used the REST API calls of POST, PUT, GET, REMOVE</li>
+  </ul>
+
+  <p style="text-decoration: underline">Some things I struggled with:</p>
+  <p>
+    1) Hiding my API key with Angular, normally I use <b>.dotenv</b> and
+    <b> process.env.API_KEY</b>
+    name, but with Angular it seems we can't do that. Then I had problems trying
+    to use the netlify environment variables in my Angular app. The end I am
+    exposing my Google map api key, not good I know, but I'm running out of time
+    as I want to send this test within the 5 dyas.
+  </p>
+  <p>
+    2) Netlify with Docker: it turns out we cannot deploy Docker environments to
+    Netlify, I guess this makes sense, but I didn't actually know that until
+    today :D
+  </p>
+</div>
