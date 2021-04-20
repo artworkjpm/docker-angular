@@ -11,7 +11,7 @@ export class ApiService {
   API: string = 'http://localhost:3000/api/v1/posts';
   postsArray: Array<object>;
 
-  constructor(private http: HttpClient) {
+  constructor(public http: HttpClient) {
     this.postsArray = [];
   }
 

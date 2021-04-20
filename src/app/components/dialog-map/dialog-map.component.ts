@@ -1,6 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Loader } from '@googlemaps/js-api-loader';
+declare var google: any;
 
 @Component({
   selector: 'app-dialog-map',
