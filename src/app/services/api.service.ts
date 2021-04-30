@@ -9,11 +9,9 @@ import { take } from 'rxjs/operators';
 })
 export class ApiService {
   API: string = 'http://localhost:3000/api/v1/posts';
-  postsArray: Array<object>;
+  postsArray: Array<object> = [];
 
-  constructor(public http: HttpClient) {
-    this.postsArray = [];
-  }
+  constructor(public http: HttpClient) {}
 
   getPosts(): Subscription {
     return this.http
